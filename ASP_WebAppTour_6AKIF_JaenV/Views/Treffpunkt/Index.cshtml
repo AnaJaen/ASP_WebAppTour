@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ASP_WebAppTour_6AKIF_JaenV.Models.Treffpunkt>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index @ViewBag.suchtouranzeige</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        Suche nach Tour
+        @Html.DropDownList("suchtour", null, htmlAttributes: new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Suchen" class="btn btn-default" />
+    </div>
+
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Strasse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Hausnr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Ort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_PLZ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_B_Buchung_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_To_Tour_Id)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.T_Strasse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.T_Hausnr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.T_Ort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.T_PLZ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buchung.B_Preis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tour.To_Bezeichnung)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.T_Treffpunkt_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.T_Treffpunkt_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.T_Treffpunkt_Id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ASP_WebAppTour_6AKIF_JaenV.Models.Fremdenfuehrer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@*Filter nach Sprache*@
+Suche mit Sprachen:
+<form>
+    <input name="suchsprache" type="text" />
+    <input type="submit" value="suchen" />
+</form>
+<br />
+
+@*Datentabelle*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.F_Vorname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F_Nachname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F_S_Sprach_Id)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Sprache.S_Language)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.F_Vorname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F_Nachname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sprache.S_Language)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.F_Fremdenfuehrer_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.F_Fremdenfuehrer_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.F_Fremdenfuehrer_Id })
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+

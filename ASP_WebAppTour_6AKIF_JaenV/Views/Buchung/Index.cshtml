@@ -1,0 +1,91 @@
+﻿@model IEnumerable<ASP_WebAppTour_6AKIF_JaenV.Models.Buchung>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index @ViewBag.suchkundeanzeige</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+<div class="form-group">
+    Suche nach Kunde
+    @Html.DropDownList("suchkunde", null, htmlAttributes: new { @class = "form-control" })
+    @Html.DropDownList("suchtour",  null, "Alle", htmlAttributes: new { @class = "form-control" })
+</div>
+    <div class="form-group">
+        <input type="submit" value="Suchen" class="btn btn-default" />
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Datum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Personenanzahl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Preis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_K_Kunde_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tour.To_Bezeichnung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_S_Sprach_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_F_Fremdenfuehrer_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_T_Treffpunkt_Id)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.B_Datum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.B_Personenanzahl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.B_Preis)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Kunde.K_Vorname)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tour.To_Bezeichnung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sprache.S_Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fremdenfuehrer.F_Vorname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Treffpunkt.T_Strasse)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.B_Buchung_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.B_Buchung_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.B_Buchung_Id })
+            </td>
+        </tr>
+    }
+
+</table>

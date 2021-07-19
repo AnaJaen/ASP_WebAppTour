@@ -1,0 +1,42 @@
+﻿@model ASP_WebAppTour_6AKIF_JaenV.Models.Fremdenfuehrer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Fremdenfuehrer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Vorname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Vorname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Nachname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Nachname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_S_Sprach_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sprache.S_Language)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.F_Fremdenfuehrer_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

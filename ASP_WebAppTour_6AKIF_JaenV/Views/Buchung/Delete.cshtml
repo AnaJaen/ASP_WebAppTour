@@ -1,0 +1,88 @@
+﻿@model ASP_WebAppTour_6AKIF_JaenV.Models.Buchung
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Buchung</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.B_Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.B_Datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_Personenanzahl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.B_Personenanzahl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_Preis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.B_Preis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_F_Fremdenfuehrer_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fremdenfuehrer.F_Vorname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_K_Kunde_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kunde.K_Vorname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_S_Sprach_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sprache.S_Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_To_Tour_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tour.To_Bezeichnung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_T_Treffpunkt_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Treffpunkt.T_Strasse)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,82 @@
+﻿@model ASP_WebAppTour_6AKIF_JaenV.Models.Buchung
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Buchung</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.B_Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.B_Datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_Personenanzahl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.B_Personenanzahl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_Preis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.B_Preis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_F_Fremdenfuehrer_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fremdenfuehrer.F_Vorname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_K_Kunde_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kunde.K_Vorname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_S_Sprach_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sprache.S_Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_To_Tour_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tour.To_Bezeichnung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.B_T_Treffpunkt_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Treffpunkt.T_Strasse)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.B_Buchung_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

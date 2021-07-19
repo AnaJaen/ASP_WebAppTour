@@ -1,0 +1,96 @@
+﻿@model IEnumerable<ASP_WebAppTour_6AKIF_JaenV.Models.Kunde>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Name", "Index", new {SortOrder = ViewBag.NameSortParm}) 
+        </th>
+        @* Attributierung Name: Verbindung Vorname und Nachname *@
+        @*<th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.K_Nachname)
+        </th>*@
+    <th>
+        @Html.ActionLink("Geburtsdatum", "Index", new { SortOrder = ViewBag.DateSortParm })
+    </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.K_GebDatum)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Anschrift)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.K_Hausnr)
+        </th>*@
+    <th>
+        @Html.ActionLink("Stadt", "Index", new { SortOrder = ViewBag.CitySortParm })
+        @*@Html.DisplayNameFor(model => model.K_Ort)*@
+    </th>
+        <th>
+            @Html.DisplayNameFor(model => model.K_Land)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.K_PLZ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.K_Email)
+        </th>
+        <th>
+            Anzahl Buchungen
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.K_Nachname)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.K_GebDatum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anschrift)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.K_Hausnr)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.K_Ort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.K_Land)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.K_PLZ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.K_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Buchungs.Count)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.K_Kunde_Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.K_Kunde_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.K_Kunde_Id })
+            @Html.ActionLink("zeige Buchungen", "Index", "Buchung", new { suchkunde = item.K_Kunde_Id }, null)
+        </td>
+    </tr>
+}
+
+</table>

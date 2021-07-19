@@ -1,0 +1,66 @@
+﻿@model ASP_WebAppTour_6AKIF_JaenV.Models.Treffpunkt
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Treffpunkt</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Strasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Strasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Hausnr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Hausnr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Ort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Ort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_PLZ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_PLZ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_B_Buchung_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Buchung.B_Preis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_To_Tour_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tour.To_Bezeichnung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.T_Treffpunkt_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

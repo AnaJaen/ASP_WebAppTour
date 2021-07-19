@@ -1,0 +1,96 @@
+﻿@model ASP_WebAppTour_6AKIF_JaenV.Models.Kunde
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Kunde</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Vorname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Vorname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Nachname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Nachname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_GebDatum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_GebDatum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Strasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Strasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Hausnr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Hausnr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Ort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Ort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Land)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Land)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_PLZ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_PLZ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

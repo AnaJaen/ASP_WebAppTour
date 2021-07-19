@@ -1,0 +1,102 @@
+﻿@model ASP_WebAppTour_6AKIF_JaenV.Models.Kunde
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kunde</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Vorname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Vorname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Nachname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Nachname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_GebDatum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_GebDatum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Strasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Strasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Hausnr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Hausnr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Ort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Ort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Land)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Land)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_PLZ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_PLZ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K_Email)
+        </dd>
+        <dt>
+            Anzahl Buchungen
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => Model.Buchungs.Count)
+        </dd>
+        <dd>
+            @foreach (var item in Model.Buchungs)
+            {
+                @item.B_Datum
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.K_Kunde_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
